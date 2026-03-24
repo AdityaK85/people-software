@@ -38,6 +38,12 @@
             transform: translateY(-6px);
             box-shadow: 0 24px 48px -12px rgba(30,58,138,0.18);
         }
+        @media (min-width: 768px) {
+    .nav-item {
+        min-width: fit-content;
+        white-space: nowrap;
+    }
+}
     </style>
 </head>
 <body class="font-sans text-slate-900 bg-slate-100 antialiased overflow-x-hidden flex flex-col min-h-screen">
@@ -50,15 +56,16 @@
                     <img src="image.png" alt="People Software" class="h-10 w-auto rounded-lg" onerror="this.src='image.png'">
                     <span class="text-lg font-extrabold text-slate-900">PEOPLE SOFTWARE</span>
                 </a>
+                
                 <div class="hidden md:flex items-center space-x-6 text-sm font-medium" style="overflow: auto !important;" >
-                    <a href="index.html" class="text-slate-600 hover:text-blue-700">Home</a>
-                    <a href="about.html" class="text-slate-600 hover:text-blue-700">About Us</a>
-                    <a href="enterprise.html" class="text-slate-600 hover:text-blue-700">Enterprise</a>
-                    <a href="services.html" class="text-slate-600 hover:text-blue-700">Services</a>
-                    <a href="infrastructure.html" class="text-slate-600 hover:text-blue-700">Network</a>
+                    <a href="index.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;" >About Us</a>
+                    <a href="enterprise.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;">Enterprise</a>
+                    <a href="services.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;">Services</a>
+                    <a href="infrastructure.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;">Network</a>
                     <!-- <a href="plans.html" class="text-slate-600 hover:text-blue-700">Plans</a> -->
-                    <a href="offices.html" class="text-slate-600 hover:text-blue-700">Contact Us</a>
-                    <a href="support.html" class="text-slate-600 hover:text-blue-700">Support</a>
+                    <a href="offices.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;">Contact Us</a>
+                    <a href="support.html" class="text-slate-600 hover:text-blue-700" style="min-width: fit-content !important;">Support</a>
                     <a href="contact.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow-sm transition">Get Quote</a>
                     <button onclick="openModal()" class="px-4 py-2 border border-slate-300 text-slate-700 rounded-md hover:bg-slate-100 transition">
                         Employee Portal
