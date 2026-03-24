@@ -47,10 +47,13 @@
                     <a href="enterprise.html" class="text-blue-600 hover:text-blue-800 font-bold">Enterprise</a>
                     <a href="services.html" class="text-slate-600 hover:text-blue-700">Services</a>
                     <a href="infrastructure.html" class="text-slate-600 hover:text-blue-700">Network</a>
-                    <a href="plans.html" class="text-slate-600 hover:text-blue-700">Plans</a>
+                    <!-- <a href="plans.html" class="text-slate-600 hover:text-blue-700">Plans</a> -->
                     <a href="offices.html" class="text-slate-600 hover:text-blue-700">Location</a>
                     <a href="support.html" class="text-slate-600 hover:text-blue-700">Support</a>
                     <a href="contact.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow-sm transition">Get Quote</a>
+                    <button onclick="openModal()" class="px-4 py-2 border border-slate-300 text-slate-700 rounded-md hover:bg-slate-100 transition">
+                        Employee Portal
+                    </button>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-blue-700 focus:outline-none" aria-label="Toggle menu"><i class="fas fa-bars text-xl"></i></button>
             </div>
@@ -62,15 +65,103 @@
                 <a href="enterprise.html" class="block text-blue-600 font-semibold">Enterprise</a>
                 <a href="services.html" class="block text-slate-700 hover:text-blue-700">Services</a>
                 <a href="infrastructure.html" class="block text-slate-700 hover:text-blue-700">Network</a>
-                <a href="plans.html" class="block text-slate-700 hover:text-blue-700">Plans</a>
+                <!-- <a href="plans.html" class="block text-slate-700 hover:text-blue-700">Plans</a> -->
                 <a href="offices.html" class="block text-slate-700 hover:text-blue-700">Location</a>
                 <a href="support.html" class="block text-slate-700 hover:text-blue-700">Support</a>
                 <a href="contact.html" class="block px-3 py-2 bg-blue-600 text-white rounded-md">Get Quote</a>
+                <button onclick="openModal()" class="block w-full text-left px-3 py-2 border border-slate-300 rounded-md">
+                Employee Portal
+            </button>
+
             </div>
         </div>
     </nav>
 
     <main class="flex-1">
+
+        <div id="loginModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
+
+            <div class="relative w-full max-w-4xl mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden flex">
+
+                <!-- LEFT SIDE (Branding) -->
+                <div class="hidden md:flex w-1/2 bg-gradient-to-br from-blue-700 to-indigo-900 text-white p-8 flex-col justify-between">
+
+                    <div>
+                        <h2 class="text-3xl font-extrabold mb-3">Connect Me Oracle</h2>
+                        <p class="text-blue-200 text-sm">
+                            Secure Employee Portal for managing internal systems and operations.
+                        </p>
+                    </div>
+
+                    <div class="text-sm text-blue-300">
+                        🔒 Secure Login <br>
+                        ☁️ Cloud Based <br>
+                        ⚡ Fast & Reliable
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDE (Form) -->
+                <div class="w-full md:w-1/2 p-8 relative">
+
+                    <!-- Close -->
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-red-500">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">
+                        Employee Login
+                    </h2>
+
+                    <form class="space-y-5">
+
+                        <!-- Email -->
+                        <div>
+                            <label class="text-sm font-medium text-slate-600">Email</label>
+                            <div class="mt-1 relative">
+                                <i class="fas fa-envelope absolute left-3 top-3 text-slate-400"></i>
+                                <input type="email" placeholder="Enter your email"
+                                    class="w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label class="text-sm font-medium text-slate-600">Password</label>
+                            <div class="mt-1 relative">
+                                <i class="fas fa-lock absolute left-3 top-3 text-slate-400"></i>
+                                <input type="password" placeholder="Enter password"
+                                    class="w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Remember + Forgot -->
+                        <div class="flex items-center justify-between text-sm">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="accent-blue-600">
+                                Remember me
+                            </label>
+                            <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+                        </div>
+
+                        <!-- Login Button -->
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-2 rounded-lg font-semibold hover:opacity-90 transition">
+                            Login
+                        </button>
+
+                    </form>
+
+                    <!-- Footer -->
+                    <p class="text-xs text-slate-400 mt-6 text-center">
+                        © 2026 Connect Me Oracle • Secure Access
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
         <!-- HERO — same gradient/style as about.html -->
         <section class="relative overflow-hidden pt-20 pb-24 bg-gradient-to-br from-blue-600 via-cyan-500 to-slate-900 text-white">
@@ -78,13 +169,13 @@
             <div class="absolute inset-0 bg-black/45"></div>
             <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <p class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold bg-white/10 text-white rounded-full px-3 py-1 shadow animate-float mb-6">
-                    B2B Connectivity Solutions
+                    Enterprise IT Solutions
                 </p>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight animate-fade-in-up mb-6" style="animation-delay:0.2s">
-                    Enterprise Infrastructure
+                    Oracle-Based Enterprise Solutions
                 </h1>
                 <p class="text-lg text-slate-200 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay:0.35s">
-                    Secure, scalable, and fully managed network solutions.
+                    Delivering scalable software, cloud, and Oracle database solutions for modern enterprises.
                 </p>
             </div>
         </section>
@@ -94,23 +185,29 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center mb-24 animate-fade-in-up">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Internet Leased Line (ILL)</h2>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6"> Oracle Database & Enterprise Software</h2>
                         <p class="text-blue-700 font-bold mb-4 border-l-4 border-blue-600 pl-3">
-                            Symmetrical Bandwidth | 1:1 Contention | 99.9% SLA
+                           High Performance | Scalable Architecture | Secure Systems
                         </p>
                         <p class="text-slate-600 mb-8 leading-relaxed text-lg">
-                            Our ILL provides dedicated, non-shared bandwidth ensuring your upload speeds exactly match download speeds. Essential for VOIP, video conferencing, and heavy cloud computing.
+                           We provide enterprise-grade Oracle database solutions designed for high performance, security, and scalability. Our systems ensure efficient data management and seamless business operations.
                         </p>
+                        <p class="text-slate-600 mb-8 leading-relaxed text-lg">
+                            From custom software development to backend architecture and API integrations, we help businesses build reliable and future-ready IT systems.
+                        </p>
+
                         <a href="contact.html" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition">
-                            Request Custom Quote <i class="fas fa-arrow-right ml-2"></i>
+                            Get IT Consultation <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                     <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg">
-                        <i class="fas fa-server text-5xl text-slate-300 mb-4"></i>
-                        <h4 class="font-bold text-xl text-slate-900 mb-4">Technical Specs</h4>
-                        <p class="text-sm text-slate-600 mb-3"><strong>Capacity:</strong> 10 Mbps to 10 Gbps</p>
-                        <p class="text-sm text-slate-600 mb-3"><strong>Handoff:</strong> Ethernet (RJ45) or Optical (LC/SC Fiber)</p>
-                        <p class="text-sm text-slate-600"><strong>Monitoring:</strong> Real-time MRTG graphing access</p>
+                        <i class="fas fa-database text-5xl text-slate-300 mb-4"></i>
+                        <h4 class="font-bold text-xl text-slate-900 mb-4">Key Capabilities</h4>
+
+                        <p class="text-sm text-slate-600 mb-3"><strong>Oracle DB:</strong> Installation, Optimization, Performance Tuning</p>
+                        <p class="text-sm text-slate-600 mb-3"><strong>Development:</strong> Web Apps, APIs, Enterprise Systems</p>
+                        <p class="text-sm text-slate-600 mb-3"><strong>Cloud:</strong> AWS, Azure, Oracle Cloud Deployment</p>
+                        <p class="text-sm text-slate-600"><strong>Security:</strong> Data Protection & Secure Architecture</p>
                     </div>
                 </div>
             </div>
@@ -120,46 +217,79 @@
 
     <!-- FOOTER — same as about.html -->
     <footer class="bg-slate-950 text-slate-300">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Company -->
             <div>
                 <a href="index.html" class="block mb-4">
-                    <img src="image.png" alt="People Software" class="h-10" onerror="this.src='image.png'">
+                    <img src="image.png" alt="Connect Me Oracle" class="h-10">
                 </a>
-                <p class="text-sm text-slate-400">Carrier-grade network and managed connectivity for enterprises and consumers with nationwide coverage.</p>
+                <p class="text-sm text-slate-400 mb-3">
+                    We provide software development, Oracle database solutions, and cloud infrastructure services for modern businesses.
+                </p>
+                <p class="text-xs text-blue-400 font-semibold">
+                    Serving Since 1993 • 30+ Years of Excellence
+                </p>
             </div>
+
+            <!-- Services -->
             <div>
-                <h3 class="text-white font-bold mb-4">Solutions</h3>
+                <h3 class="text-white font-bold mb-4">IT Services</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="enterprise.html" class="hover:text-white">Dedicated Internet</a></li>
-                    <li><a href="enterprise.html" class="hover:text-white">SD-WAN &amp; MPLS</a></li>
-                    <li><a href="services.html" class="hover:text-white">Residential FTTH</a></li>
-                    <li><a href="plans.html" class="hover:text-white">Pricing Plans</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Software Development</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Oracle Database Solutions</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Cloud Infrastructure</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">API & Backend Development</a></li>
                 </ul>
             </div>
+
+            <!-- Company -->
             <div>
                 <h3 class="text-white font-bold mb-4">Company</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="about.html" class="hover:text-white">About Us</a></li>
-                    <li><a href="offices.html" class="hover:text-white">Locations</a></li>
-                    <li><a href="support.html" class="hover:text-white">Support</a></li>
-                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="offices.html" class="hover:text-white transition">Locations</a></li>
+                    <li><a href="support.html" class="hover:text-white transition">Support</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">Employee Portal</a></li>
                 </ul>
             </div>
+
+            <!-- Contact -->
             <div>
-                <h3 class="text-white font-bold mb-4">Connect</h3>
-                <p class="text-sm text-slate-400 mb-4">info@netxhome.com</p>
+                <h3 class="text-white font-bold mb-4">Contact</h3>
+
+                <p class="text-sm text-slate-400 mb-2">
+                    connect@peoplesoftware.com
+                </p>
+
+                <p class="text-xs text-slate-500 mb-4">
+                    Head Office: Thane, Mumbai, India
+                </p>
+
                 <div class="flex gap-3">
-                    <a href="#" class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-600 transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="h-9 w-9 flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-600 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="h-9 w-9 flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-600 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="h-9 w-9 flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-600 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
                 </div>
             </div>
+
         </div>
+
+        <!-- Bottom -->
         <div class="border-t border-slate-800 py-5 text-center text-xs text-slate-500">
-            © 2026 PEOPLE SOFTWARE. All Rights Reserved. |
-            <a href="about.html" class="hover:text-white">Privacy</a> |
-            <a href="about.html" class="hover:text-white">Terms</a>
+            © 2026 <span class="text-white font-semibold">Connect Me Oracle</span>. All Rights Reserved. |
+            <a href="#" class="hover:text-white transition">Privacy Policy</a> |
+            <a href="#" class="hover:text-white transition">Terms & Conditions</a>
         </div>
+
     </footer>
 
     <!-- WhatsApp FAB — same as about.html -->
@@ -172,6 +302,16 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        function openModal() {
+            document.getElementById("loginModal").classList.remove("hidden");
+            document.getElementById("loginModal").classList.add("flex");
+        }
+
+        function closeModal() {
+            document.getElementById("loginModal").classList.add("hidden");
+            document.getElementById("loginModal").classList.remove("flex");
+        }
     </script>
 </body>
 </html>
